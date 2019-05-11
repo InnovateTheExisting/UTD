@@ -1,0 +1,4 @@
+Steps to run program:
+1. Programs are executed on google colab.
+2. Click on the links given in document for each classifier respectively. ( In google colab : https://colab.research.google.com/ )
+3. Run the code 
