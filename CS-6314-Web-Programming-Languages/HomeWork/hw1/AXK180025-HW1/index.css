@@ -1,0 +1,20 @@
+html,body,.container-fluid,.row {
+    height:100%;
+    overflow-x:hidden; 
+}
+.profi{
+	width:40px;
+}
+.colback{
+	background-color:#D0D0D0;
+}
+
+.sechead{
+	font-style:italic;
+	font-size:2em;
+}
+.main{padding:100px;}
+
+.ads{width:70%; height:100%;}
+
+.ad-pad{padding:10px;}

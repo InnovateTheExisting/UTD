@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>City Gallery</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #ccc;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+nav {
+  float: left;
+  width: 15%;
+  height: 1000px;
+  padding: 20px;
+  border-right-style: solid;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.city {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  height: 300px;
+}
+
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+footer {
+  background-color:#ccc;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  margin-left: 20px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+img {
+  float: left;
+}
+
+</style>
+</head>
+<body>
+<header>
+  <h2>City Gallery</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#London">London</a></li>
+      <li><a href="#Paris">Paris</a></li>
+      <li><a href="#Tokyo">Tokyo</a></li>
+    </ul>
+  </nav>
+  
+  <div class="topnav">
+  <a href="#London">London</a>
+ <a href="#Paris">Paris</a>
+  <a href="#Tokyo">Tokyo</a>
+  </div>
+  
+  
+  <article id="London" class="city">
+    <h1>London</h1>
+    <p><img src="img/london.jpg" alt="London" style="width:170px;height:170px;margin-right:15px;">London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to it’s founding by the Romans, who named it Londinium.</p>
+  </article>
+  
+  
+  <article id="Paris" class="city">
+    <h1>Paris</h1>
+    <p><img src="img/paris.jpg" alt="Paris" style="width:170px;height:170px;margin-right:15px;">Paris is the capital and the most populous city of France. It has an area of 105 km² (41 mi²) and a population in 2013 of 2,229,621 within the city limits. Paris was founded in the 3rd century BC by a Celtic people called the Parisii, who gave the city its name. By the 12th century, Paris was the largest city in the western world, a prosperous trading center, and the home of the University of Paris, one of the oldest universities in history. At 17th century is the capital of Europe's major power. In the 18th century, it was the center stage of the French Revolution, and was an important center of finance, commerce, fashion, science, and the arts, a position it still retains today</p>
+  </article>
+  
+  
+  <article id="Tokyo" class="city">
+    <h1>Tokyo</h1>
+    <p><img src="img/tokyo.jpg" alt="Tokyo" style="width:170px;height:170px;margin-right:15px;">Tokyo, officially Tokyo is one of the 47 prefectures of Japan, and is both the capital and most populous city of Japan. The Greater Tokyo Area is the most populous metropolitan area in the world.</p>
+  </article>
+  
+</section>
+
+<footer>
+  <p>CS 6314.501 - In Class Assignment 1</p>
+</footer>
+
+</body>
+</html>

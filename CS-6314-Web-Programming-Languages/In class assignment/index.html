@@ -1,0 +1,114 @@
+<html lang="en">
+	<head>
+		<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+	
+	<!-- Styles -->
+	<style>
+		#user_info label{
+			display: inline-block;
+			width: 100px;
+			text-align: right;
+		}
+		#user_submit{
+			padding-left: 100px;
+		}
+		#user_info div{
+			margin-top: 1em;
+		}
+		
+		.error{
+			display: none;
+			margin-left: 10px;
+		}		
+		
+		.error_show{
+			color: red;
+			margin-left: 10px;
+		}
+
+		.success{
+			color: green;
+			margin-left: 10px;
+		}
+		
+		input.invalid{
+			border: 2px solid red;
+		}
+		
+		input.valid{
+            display:none;
+			border: 2px solid green;
+		}
+        .message{
+            display: inline-block;
+            margin-left: 100px; 
+            width: 100px;
+        }
+	</style>
+	
+	<script>
+		$(document).ready(function() {
+			//Add Code to check for button Click
+			$("#user_info").submit(function(){
+				
+				//Add Code to validate if username field is blank
+				
+				//Add Code to validate length of username field
+				
+				
+				//Add Code to validate if password field is blank
+				
+				//Add Code to validate length of password field
+				
+				
+				//Add Code to see if the phone number field is not blank
+
+				
+				//Add Code to see if the phone number only contains numbers
+				event.preventDefault();	
+				  var phone = $("#user_phone").val();
+
+				  var digits = /^[0-9]+$/;
+				  var is_phone = digits.test(phone);
+				  
+				  if(is_phone == false)  {
+				  	 phone_error = "<p class = error_show>Invalid phone number</p>";
+					  $("body").append(phone_error);
+					  $("#user_phone").addClass("input.invalid");
+				  }
+				
+				//Add code to update css on sucess. 
+				else{
+					success = "<p class = success>Form submitted</p>";
+					$("body").append(success);
+				}
+			})
+		
+		});
+	</script>
+	</head>
+    <body>
+		<form id="user_info" method="post" action="">
+			<div>
+				<label for="user_name">Username:</label>
+				<input type="text" id="user_name" name="user_name">
+			</div>
+			<div>
+				<label for="user_password">Password:</label>
+				<input type="Password" id="user_password" name="user_password">
+				
+			</div>
+			<div>
+				<label for="user_phone">Phone:</label>
+				<input type="text" id="user_phone" name="user_phone">
+                        </div>						
+			<div id="user_submit">				
+				<button type="submit">Validate</button>
+			</div>
+			<div id="Message">
+				
+			</div>
+		</form>
+	</body>
+</html>

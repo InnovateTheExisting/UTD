@@ -1,0 +1,166 @@
+<html lang="en">
+	<head>
+		<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+	
+	<!-- Styles -->
+	<style>
+		#user_info label{
+			display: inline-block;
+			width: 100px;
+			text-align: right;
+		}
+		#user_submit{
+			padding-left: 100px;
+		}
+		#user_info div{
+			margin-top: 1em;
+		}
+		
+		.error{
+			display: none;
+			margin-left: 10px;
+		}		
+		
+		.error_show{
+			color: red;
+			margin-left: 10px;
+		}
+		
+		input.invalid{
+			border: 2px solid red;
+		}
+                
+                .success{
+                    color:green;
+                    margin-left: 10px;
+                }
+		
+		input.valid{
+                        
+			border: 2px solid green;
+		}
+        .message{
+            display: inline-block;
+            margin-left: 100px; 
+            width: 100px;
+        }
+	</style>
+	
+	<script>
+		$(document).ready(function() {
+			//Add Code to check for button Click
+                        $("#user_submit").click(function(){
+                            
+                            event.preventDefault();
+                            $("#Message").empty();
+                            //Add Code to validate if username field is blank
+                            if ($("#user_name").val().length=== 0 || $("#user_password").val().length=== 0 
+                                    || $("#user_phone").val().length=== 0 ){
+                                event.preventDefault();
+                                $("#Message").append("<p class=error_show> All fields are mandatory</p>");
+                                
+                            }
+                            
+                            
+                            
+                            // If all fields are filled
+                            else 
+                            {
+                                var check = 0;
+                                //Add Code to validate length of username field
+                                if ($("#user_name").val().length < 6 ){
+                                    event.preventDefault();
+                                    $("#user_name").removeClass("valid");
+                                    $("#user_name").addClass("invalid");
+                                    $("#Message").append("<p class=error_show> Username too short</p>");
+                                    check = check+1;
+                                    }
+
+                                else {
+                                   $("#user_name").removeClass("invalid");
+                                    $("#user_name").addClass("valid"); 
+                                }
+                                //Add Code to validate length of password field
+                                if ($("#user_password").val().length < 6 ){
+                                    event.preventDefault();
+                                    $("#user_password").removeClass("valid");
+                                    $("#user_password").addClass("invalid");
+                                    $("#Message").append("<p class=error_show> Password too short</p>");
+                                    
+                                    }
+                                
+                                else {
+                                   $("#user_password").removeClass("invalid");
+                                    $("#user_password").addClass("valid"); 
+                                }
+                                
+                                //Add Code to see if the phone number only contains numbers
+                                var phone = $("#user_phone").val();
+
+				var digits = /^[0-9]+$/;
+				var is_phone = digits.test(phone);
+				  
+                                if(is_phone == false)  {
+                                       phone_error = "<p class = error_show>Invalid phone number</p>";
+                                        $("#Message").append(phone_error);
+                                        $("#user_phone").removeClass("valid");
+                                        $("#user_phone").addClass("invalid");
+                                        check = check+1;
+				  }
+                                  
+                                else{
+                                    $("#user_phone").removeClass("invalid");
+                                    $("#user_phone").addClass("valid"); 
+                                }
+                                
+                                
+                                //Add code to update css on success. 
+                                if (check === 0){
+                                    event.preventDefault();
+                                   $("#Message").append("<p class=success> Form correct!</p>"); 
+                                   
+                                   $("#user_name").removeClass("invalid");
+                                   $("#user_password").removeClass("invalid");
+                                   $("#user_phone").removeClass("invalid");
+                                   
+                                   $("#user_name").addClass("valid");
+                                   $("#user_password").addClass("valid");
+                                   $("#user_phone").addClass("valid");
+                                }
+                                
+                            }
+                            
+                            
+                        });
+                        });
+			
+				
+				
+				
+</script>
+	</head>
+    <body>
+		<form id="user_info" method="post" action="">
+			<div>
+				<label for="user_name">Username:</label>
+				<input type="text" id="user_name" name="user_name">
+			</div>
+			<div>
+				<label for="user_password">Password:</label>
+				<input type="Password" id="user_password" name="user_password">
+				
+			</div>
+			<div>
+				<label for="user_phone">Phone:</label>
+				<input type="text" id="user_phone" name="user_phone">
+                        </div>						
+			<div id="user_submit">				
+				<button type="submit" >Validate</button>
+			</div>
+			<div id="Message">
+				
+			</div>
+		</form>
+	</body>
+</html>

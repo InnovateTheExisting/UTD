@@ -1,0 +1,3 @@
+$(document).ready(function() {
+	// your js code goes here...
+});
